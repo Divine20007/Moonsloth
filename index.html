@@ -43,8 +43,15 @@
             <h1 id="home-title" class="card-title">MoonSloth: Chill Slow, Moon Fast 🦥🚀</h1>
             <p class="card-text">Join Slomo, the chillest crypto legend, on his Solana-powered rocket to the moon 🌕. No utility, just pure meme energy and community vibes. LFG, Sloth Gang! 💪</p>
 
-            <div class="hero-cta">
-              <a class="btn" href="https://t.me/moonsloth">Join the Jungle 👥</a>
+<div class="hero-cta">
+  <button id="join-jungle" class="btn">Join the Jungle 👥</button>
+
+  <!-- Hidden buttons initially -->
+  <div id="extra-buttons" class="extra-buttons">
+    <a class="btn" href="https://t.me/moonsloth" target="_blank">Telegram 👥</a>
+    <a class="btn" href="https://discord.com" target="_blank">Discord 🎮</a>
+  </div>
+</div>
               <a class="btn" href="https://x.com/MoonSlothCoin">Follow on X 🐦</a>
               <a class="btn">Buy [SOON] 🛒</a>
             </div>
@@ -52,6 +59,31 @@
 
         </div>
       </div>
+      <div class="home-extra-text card reveal">
+  <p class="card-text">
+    Welcome to the MoonSloth jungle! 🦥🌕 Here, the vibes are chill, the memes are wild, and the community is thriving. Whether you're here for laughs, stories, or the $MSLOTH adventure, you've come to the right place.
+  </p>
+<hr>
+  <p class="card-text">
+    Slomo the MoonSloth says: “Take your time, enjoy the ride, and maybe grab a mango along the way 🍌.” Follow our updates, share your memes, and connect with fellow sloths from around the world.
+  </p>
+<hr>
+  <p class="card-text">
+    Fun facts to keep you entertained:
+  </p>
+  <ul class="card-list">
+    <li>🚀 $MSLOTH was inspired by a sloth accidentally syncing with the blockchain</li>
+    <hr class="blue-line">
+    <li>💤 Sloths nap 20 hours a day — our community works on chill mode</li>
+    <hr class="blue-line">
+    <li>🔥 Meme contests, giveaways, and surprise drops keep the jungle lively</li>
+    <hr class="blue-line">
+  </ul>
+
+  <p class="card-text">
+    Stay tuned, stay chill, and let’s moon slowly together. 🌕💪
+  </p>
+</div>
     </section>
 
     <!-- ABOUT SECTION - Timeline / Storyboard -->
@@ -130,8 +162,11 @@
             <h3 class="card-title small">Breakdown</h3>
             <ul class="card-list">
               <li>50% Liquidity (500M)</li>
+              <hr class="blue-line"
               <li>20% Community airdrops (200M)</li>
+              <hr class="blue-line"
               <li>20% Marketing (200M)</li>
+              <hr class="blue-line"
               <li>10% Dev/team (100M, locked)</li>
             </ul>
           </div>
@@ -179,7 +214,7 @@
           <article class="card reveal step">
             <div class="step-number">1</div>
             <h4 class="card-title small">Install Wallet</h4>
-            <p class="card-text">Install Phantom, Solflare or any solana wallet and trading bot on desktop or mobile.</p>
+            <p class="card-text">Install Phantom, Solflare or any solana wallet and trading bot on your desktop or mobile.</p>
           </article>
 
           <article class="card reveal step">
@@ -191,13 +226,13 @@
           <article class="card reveal step">
             <div class="step-number">3</div>
             <h4 class="card-title small">Swap</h4>
-            <p class="card-text">Paste the $MSLOTH contract and buy/swap.</p>
+            <p class="card-text">Paste the $MSLOTH contract Address and buy/swap.</p>
           </article>
         </div>
 
         <p class="disclaimer card-text"><strong>Disclaimer:</strong> $MSLOTH is for entertainment only. High risk of loss; no guarantees. DYOR 🔍</p>
 
-        <a class="btn" href="https://raydium.io/swap">Swap on Raydium 🛒</a>
+        <a class="btn">Swap on Raydium 🛒</a>
       </div>
     </section>
 
@@ -227,13 +262,13 @@
       <p class="card-text">
         MoonSloth is a community-driven memecoin on Solana, created for entertainment purposes only. No financial advice. Cryptocurrency is high-risk—only invest what you can afford to lose.
       </p>
-
+<hr>
       <!-- Legal Disclaimer -->
       <p class="card-text">
         <strong>Legal Disclaimer:</strong> $MSLOTH has no utility or promise of returns. Dev/team wallet will be locked for 1 year (verify on Solscan). U.S. residents: consult a tax professional. Always DYOR.
       </p>
 <hr>
-      <!-- Social Links with icons -->
+      <!-- Social Links -->
       <p class="card-text">
         📨 DM on X: <a href="https://x.com/MoonSlothCoin" target="_blank">@MoonSlothCoin</a><br>
         💬 Join our Telegram: <a href="https://t.me/moonsloth" target="_blank">MoonSloth Community</a><br>
@@ -244,9 +279,32 @@
       <p class="card-text">
         ✉️ Email: <a href="mailto:info@moonsloth.xyz">info@moonsloth.xyz</a>
       </p>
+<div class="contact-socials">
+  <a class="social-btn" href="https://t.me/moonsloth" target="_blank" aria-label="Telegram">
+    <!-- Telegram Icon SVG -->
+    <svg width="24" height="24" fill="#ff8c00" viewBox="0 0 24 24">
+      <path d="M9.5 14.5l.4 4.2c.6 0 1-.3 1.4-.7l3.3-3.2 6.9 5.1c1.2.7 2 .3 2.3-1.1l3.9-18.5s.3-1.2-.8-1.2-21.7 8.1-21.7 8.1-.9.4-.9 1.2c0 .6.8 1 1.4 1l4.6 1.5 10.7-6.7c.5-.3 1.1-.1 1 .5l-.7 6.7c-.1.5-.5.9-1.1.9h-.1l-9.7-.2z"/>
+    </svg>
+  </a>
 
-      <!-- Optional Contact Form -->
-      <form action="#" method="POST" class="contact-form">
+  <a class="social-btn" href="https://discord.com" target="_blank" aria-label="Discord">
+    <!-- Discord Icon SVG -->
+    <svg width="24" height="24" fill="#ff8c00" viewBox="0 0 245 240">
+      <path d="M104.4 0C46.7 0 0 46.7 0 104.4c0 57.6 46.7 104.4 104.4 104.4s104.4-46.7 104.4-104.4C208.8 46.7 162.1 0 104.4 0zm0 189.3c-46.1 0-83.7-37.5-83.7-83.7S58.3 22 104.4 22s83.7 37.5 83.7 83.7-37.6 83.6-83.7 83.6z"/>
+    </svg>
+  </a>
+
+  <a class="social-btn" href="https://x.com/MoonSlothCoin" target="_blank" aria-label="X">
+    <!-- X Icon SVG -->
+    <svg width="24" height="24" fill="#ff8c00" viewBox="0 0 24 24">
+      <path d="M24 2.5L21.5 0 12 9.5 2.5 0 0 2.5 9.5 12 0 21.5 2.5 24 12 14.5 21.5 24 24 21.5 14.5 12z"/>
+    </svg>
+  </a>
+</div>
+      <!-- Contact Form (Formspree with redirect) -->
+      <form action="https://formspree.io/f/mkgvknng" method="POST" class="contact-form">
+        <input type="hidden" name="_next" value="/thank-you.html">
+
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required>
 
@@ -264,7 +322,7 @@
         Join 5,000+ Sloth Gang members across X, Telegram, and Discord! Share memes, create stories, win airdrops, and chill with Slomo. 🌕🚀
       </p>
 
-      <!-- Placeholder / Coming Soon -->
+      <!-- Optional placeholder -->
       <p class="links">
         <a class="link">COMING SOON</a>
       </p>

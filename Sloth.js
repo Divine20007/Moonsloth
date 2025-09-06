@@ -427,3 +427,45 @@ function handleScrollReveal() {
 // Run on scroll & load
 window.addEventListener('scroll', handleScrollReveal);
 window.addEventListener('load', handleScrollReveal);
+// Contact Form submission redirect for Formspree
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // prevent default submission
+
+      const formData = new FormData(form);
+      const action = form.action;
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Redirect to your custom thank-you page
+          window.location.href = "/thank-you.html";
+        } else {
+          alert("Oops! There was a problem submitting your form.");
+        }
+      } catch (error) {
+        alert("Oops! There was a problem submitting your form.");
+        console.error(error);
+      }
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const joinBtn = document.getElementById("join-jungle");
+  const extraBtns = document.getElementById("extra-buttons");
+
+  joinBtn.addEventListener("click", () => {
+    extraBtns.classList.add("show"); // trigger fade + slide-in
+    joinBtn.disabled = true; // optional: prevent multiple clicks
+  });
+});
