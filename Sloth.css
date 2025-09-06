@@ -1,0 +1,586 @@
+/* ================================
+   Base Styles
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a {
+  color: #ff8c00;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ================================
+   Navigation
+================================ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ff8c00;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animate Hamburger to X */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Nav Links (Desktop Default) */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff8c00;
+}
+
+.nav-link.active {
+  background: #ff8c00;
+  color: #000;
+}
+
+/* ================================
+   Mobile Menu Styles
+================================ */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 70%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    padding-top: 4rem;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+    gap: 0;
+  }
+
+  .nav-links.show {
+    right: 0; /* Slide in */
+  }
+
+  .nav-link {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.3s ease;
+  }
+
+  /* Animate each link staggered */
+  .nav-links.show .nav-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.show .nav-link:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.show .nav-link:nth-child(2) { transition-delay: 0.2s; }
+  .nav-links.show .nav-link:nth-child(3) { transition-delay: 0.3s; }
+  .nav-links.show .nav-link:nth-child(4) { transition-delay: 0.4s; }
+  .nav-links.show .nav-link:nth-child(5) { transition-delay: 0.5s; }
+}
+
+
+/* ================================
+   Sections
+================================ */
+.section {
+  display: none;
+  padding: 8rem 1rem 4rem;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ff8c00;
+}
+
+/* ================================
+   Cards & Elements
+================================ */
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #ff8c00;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-title.small {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.card-list li {
+  margin: 0.4rem 0;
+}
+
+/* Buttons */
+.btn {
+  background: #ff8c00;
+  color: #000;
+  font-weight: bold;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0 0;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ================================
+   Timeline
+================================ */
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+.connector-svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  stroke: #ff8c00;
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 3rem 0;
+  padding-left: 3rem;
+}
+
+.timeline-badge {
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  font-size: 2rem;
+  background: #000;
+  border: 2px solid #ff8c00;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+/* ================================
+   Roadmap
+================================ */
+.roadmap-wrap {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(255,140,0,0.3);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.roadmap-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.roadmap-step {
+  font-weight: bold;
+  color: #ff8c00;
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   Steps (Buy Section)
+================================ */
+.steps-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff8c00;
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   Community Section
+================================ */
+.community-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ================================
+   Animations
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-emoji, .falling-rain, .dots-lines {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  font-size: 2rem;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.floating-emoji {
+  animation: float 6s infinite ease-in-out;
+}
+
+.falling-rain {
+  animation: fall linear infinite;
+}
+
+.dots-lines {
+  width: 6px;
+  height: 6px;
+  background: #ff8c00;
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.dots-lines.line {
+  width: 2px;
+  height: 30px;
+  border-radius: 2px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+@keyframes slideInBounce {
+  0% { right: -100%; }
+  70% { right: 15px; }  /* overshoot slightly */
+  100% { right: 0; }
+}
+
+.nav-links.show {
+  animation: slideInBounce 0.6s ease-out forwards;
+}
+@keyframes slideOutBounce {
+  0% { right: 0; }
+  30% { right: 10px; }   /* tiny push inward */
+  100% { right: -100%; }
+}
+
+.nav-links.hide {
+  animation: slideOutBounce 0.5s ease-in forwards;
+}
+/* ================================
+   Scroll Animations
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.timeline .timeline-item,
+.roadmap-cards .card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.timeline .timeline-item.show,
+.roadmap-cards .card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================
+   Responsive
+================================ */
+@media (min-width: 768px) {
+  .roadmap-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hero-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+@keyframes linkSlideIn {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-5px); /* tiny overshoot */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nav-links.show .nav-link {
+  opacity: 0;
+  animation: linkSlideIn 0.5s ease forwards;
+}
+
+/* Stagger each link */
+.nav-links.show .nav-link:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nav-links.show .nav-link:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav-links.show .nav-link:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nav-links.show .nav-link:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nav-links.show .nav-link:nth-child(5) {
+  animation-delay: 0.5s;
+}
+@keyframes linkSlideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* Slide out links when menu is closing */
+.nav-links.hiding .nav-link {
+  animation: linkSlideOut 0.3s ease forwards;
+}
+
+.nav-links.hiding .nav-link:nth-child(1) { animation-delay: 0s; }
+.nav-links.hiding .nav-link:nth-child(2) { animation-delay: 0.05s; }
+.nav-links.hiding .nav-link:nth-child(3) { animation-delay: 0.1s; }
+.nav-links.hiding .nav-link:nth-child(4) { animation-delay: 0.15s; }
+.nav-links.hiding .nav-link:nth-child(5) { animation-delay: 0.2s; }
+/* Floating Emojis: Rotation + Pulse */
+.floating-emoji {
+  animation: float 6s infinite ease-in-out, rotate 8s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Solana Rain */
+.solana-rain {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+/* ================================
+   Contact Section - Form & Socials
+================================ */
+.contact-card .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.contact-card .contact-form input,
+.contact-card .contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-card .contact-form input::placeholder,
+.contact-card .contact-form textarea::placeholder {
+  color: #bbb;
+}
+
+.contact-card .contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-card .contact-form .btn {
+  width: fit-content;
+  padding: 0.7rem 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Social links inside contact card */
+.contact-card a {
+  color: #ff8c00;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Optional: adjust spacing for the "Coming Soon" link */
+.contact-card .links {
+  margin-top: 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .contact-card .contact-form input,
+  .contact-card .contact-form textarea {
+    font-size: 0.95rem;
+  }
+}
